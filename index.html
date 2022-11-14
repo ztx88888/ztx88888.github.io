@@ -1,74 +1,334 @@
 <!DOCTYPE html>
-<head>
 <html lang="en">
-    <style type="text/css">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
         *{
             margin: 0;
             padding: 0;
         }
-        body{
-            background-image: url(123.jpg);
-            background-size: 100%;
-            background-repeat: no-repeat;
+        html,body{
+            height: 100%;
         }
-        tr{
-            width: 125px;
-            height: 25px;
+        ul{
+            list-style: none;
         }
-        a:visited{
+        header{
+            height: 10%;
+            background-color: blue;
+        }
+        header>ul{
+            display: flex;
+            height: 100%;
+        }
+        header ul>li{
+            flex: 1;
+            text-align: center;
+            line-height: 77px;;
+            color: white;
+            font-size: 20px;
+        }
+        header>ul>li a{
+            text-decoration: none;
+            color: white;
+        }
+        header ul>li:hover{
+            background-color: lightblue;
+        }
+        .zuoye{
+            position: relative;
+        }
+        .zuoye ul{
+            width: 100%;
+            height: 77px;
+            position: absolute;
+            top: 74px;
+            
+        }
+        .zuoye ul>li{
+            background-color: lightblue;
+            display: none;
+           
+        }
+        .zuoye:hover ul>li{
+            display: block;
+            
+        }
+        .zuoye ul li:hover a{
             color: blue;
         }
+        section{
+            height: 80%;
+            display: flex;
+        }
+        section nav{
+            width: 300px;
+        }
+        nav p{
+            text-indent: 2em;
+            font-size: 20px;
+        }
+        nav div{
+            width: 300px;
+            height: 300px;
+            background: linear-gradient(white 50%,black 50%);
+            margin: 50px auto;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            animation: ytf1 1s linear infinite;
+            box-sizing: border-box;
+            border: 1px solid gray;
+        }
+       @keyframes ytf1{
+        from{
+            transform: rotate(0deg);
+        }
+        to{
+            transform: rotate(360deg);
+        }
+       }
        
+        nav>div::before{
+            content: "";
+            width: 150px;
+            height: 150px;
+            display: block;
+            background: -webkit-radial-gradient(black 20%,white 20%);
+            border-radius: 50%;
+        }
+        nav>div::after{
+            content: "";
+            width: 150px;
+            height: 150px;
+            display: block;
+            background: -webkit-radial-gradient( white 20%,black 20%);
+            border-radius: 50%;
+        }
+        section main{
+            flex: 1;
+            z-index: -1;
+        }
+        section aside{
+            width: 300px;
+            
+        }
+        aside>div{
+            width: 180px;
+            height: 300px;
+            background-image: url(逐帧动画案例01.jpg);
+            animation: ytf2 1s step-end infinite;
+            margin-left: 60px;
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+        @keyframes ytf2 {
+            0%{
+                background-position: 0px,0px;
+            }
+            14.3%{
+                background-position: -180px,0;
+            }
+            28.6%{
+                background-position: -360px,0;
+            }
+            42.9%{
+                background-position: -540px,0;
+            }
+            57.2%{
+                background-position: -720x,0;
+            }
+           71.5%{
+                background-position: -900px,0;
+            }
+            85.8%{
+                background-position: -1080px,0;
+            }
+            100%{
+                background-position: -1260px,0;
+            }
+            
+        }
+        aside p{
+            text-indent: 2em;
+            font-size: 20px;
+        }
+        main .box1{
+            height: 50%;
+            display: flex;
+            flex-direction: column;
+            background-image: url(薛之谦01.png);
+            background-size: 100% 100%;
+        }
+        main .box1>header{
+            height: 20%;
+            background-color: lightgreen;
+            text-align: center;
+            font-size: 20px;
+            font-style: italic;
+            line-height: 60px;
+            opacity: 0.5;
+
+        }
+        main .box1>footer{
+            height: 20%;
+            background-color: lightgreen;
+            text-align: center;
+            font-size: 20px;
+            line-height: 60px;
+            opacity: 0.5;
+
+
+        }
+        main .box1>div{
+            flex: 1;
+        }
+        main .box2{
+            height: 50%;
+            display: flex;
+            flex-direction: column;
+        }
+        main .box2>header{
+            height: 20%;
+            background-color: lightgreen;
+            text-align: center;
+            font-size: 20px;
+            font-style: italic;
+            line-height: 60px;
+            opacity: 0.5;
+        }
+        
+        .box3{
+            width: 100%;
+            height: 60%;
+            transform-style:preserve-3d ;
+            position: relative;
+           animation: zhuan 10s linear infinite;
+        }
+        @keyframes zhuan {
+            0%{
+                transform: rotateX(30deg) rotateY(30deg);
+            }
+            25%{
+                transform: rotateX(300deg) rotateY(300deg);
+            }
+            50%{
+                transform: rotateX(-30deg) rotateY(-30deg);
+            }
+            75%{
+                transform: rotateX(130deg) rotateY(130deg);
+            }
+            100%{
+                transform: rotateX(-230deg) rotateY(-230deg);
+            }
+            
+        }
+        .box3 div{
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-top: -50px;
+            margin-left: -50px;
+            line-height: 100px;
+            text-align: center;
+            font-size: 30px;
+        }
+        .box3>div:nth-child(1){
+            background-color: yellow;
+            transform: translateZ(50px);
+        }
+        .box3>div:nth-child(2){
+            background-color: red;
+            transform: translateX(-50px) rotateY(-90deg);
+        }
+        .box3>div:nth-child(3){
+            background-color: blue;
+            transform: translateY(50px) rotateX(90deg);
+        }
+        .box3>div:nth-child(4){
+            background-color: green;
+            transform: translateY(-50px) rotateX(-90deg);
+        }
+        .box3>div:nth-child(5){
+            background-color: purple;
+            transform: translateX(50px) rotateY(90deg);
+        }
+        .box3>div:nth-child(6){
+            background-color: orange;
+            transform: translateZ(-50px);
+            
+        }
+        
+        main .box2>footer{
+            height: 20%;
+            background-color: lightgreen;
+            text-align: center;
+            font-size: 20px;
+            /* font-style: italic; */
+            line-height: 60px;
+            opacity: 0.5;
+        }
+        .footer{
+            height: 10%;
+            background-color: blue;
+            text-align: center;
+            line-height: 77px;;
+            color: white;
+            font-size: 20px;
+            font-style: italic;
+        }        
     </style>
-    <title>姚土飞相亲网站</title>
 </head>
 <body>
-    <table border="1" bgborder="black" width="500px" cellspacing="0" >
-        <tr>
-            <td><a href="九九乘法表.html" target="_blank">第一次作业</a></td>
-            <td><a href="二十以内加减法.html" target="_blank">第二次作业</a></td>
-            <td>第三次作业</td>
-            <td>第四次作业</td>
-        </tr>
-        <tr>
-            <td>第五次作业</td>
-            <td>第六次作业</td>
-            <td>第七次作业</td>
-            <td>第八次作业</td>
-        </tr>
-        <tr>
-            <td>第九次作业</td>
-            <td>第十次作业</td>
-            <td>第十一次作业</td>
-            <td>第十二次作业</td>
-        </tr>
-        <tr>
-            <td>第十三次作业</td>
-            <td>第十四次作业</td>
-            <td>第十五次作业</td>
-            <td>第十六次作业</td>
-        </tr>
-    </table>
-   <ul type="none">
-        <li><a href="https://github.com/ztx88888/ztx88888.github.io" target="_blank">我的仓库</a></li>
-        <li><a href="qrCode.jpg" target="_blank">我的域名二维码</a></li>
-        <li><a href="234.jpg" target="_blank">谁的帅照？</a></li>
-        
-        
-            <!-- target="_blank": 在新的窗口中打开一个页面 -->
-   </ul>
-    <h2 style="color: yellow;"><center>页</center></h2>
-    <h3 style="color: blue;"><center>主</center></h3>
-    <h4 style="color: green;"><center>的</center></h4>
-    <h5 style="color: greenyellow;"><center>飞</center></h5>
-    <h6 style="color: black;"><center>土</center></h6>
-    <h5 style="color: greenyellow;"><center>姚</center></h5>
-    <h4 style="color: green;"><center>到</center></h4>
-    <h3 style="color: blue;"><center>来</center></h3>
-    <h2 style="color: yellow;"><center>迎</center></h2>
-    <h1 style="color: red;"><center>欢</center></h1>
-    <p><center>&#128512</center></p>
-    
-   
+    <header>
+        <ul>
+            <li><a href="https://github.com/ztx88888/ztx88888.github.io">我的仓库</a></li>
+            <li><a href="qrCode.jpg">我的qrCode</a></li>
+            <li class="zuoye">我的作业
+                <ul>
+                    <li><a href="九九乘法表.html">第一次作业</a></li>
+                    <li><a href="二十以内加减法.html">第二次作业</a></li>
+                    <li><a href="">第三次作业</a></li>
+                    <li><a href="">第四次作业</a></li>
+                </ul>
+            </li>
+            <li><a href="234.jpg">谁的帅照？</a></li>
+        </ul>
+    </header>
+    <section>
+        <nav>
+            <div></div>
+            <p>太极是中国文化史上的一个重要概念、范畴，就迄今所见文献看，《易传》：“易有太极，是生两仪。两仪生四象，四象生八卦。</p>
+        </nav>
+        <main>
+            <article class="box1">
+                <header>姚土飞又牛逼，又深沉！</header>
+                <div></div>
+                <footer>&#128512 &#128513 &#128514 &#128515 &#128516 &#128517 &#128518 &#128519</footer>
+            </article>
+            <article class="box2">
+                <header>期待2023年，一帆风顺。</header>
+                <div class="box3">
+                    <div>1</div>
+                    <div>2</div>
+                    <div>3</div>
+                    <div>4</div>
+                    <div>5</div>
+                    <div>6</div>
+                </div>
+                <footer>&#128512 &#128513 &#128514 &#128515 &#128516 &#128517 &#128518 &#128519</footer>
+            </article>
+        </main>
+        <aside>
+            <div></div>
+            <p>什么是 CSS 动画？ 动画使元素逐渐从一种样式变为另一种样式。 您可以随意更改任意数量的 CSS 属性。</p>
+        </aside>
+    </section>
+    <footer class="footer">网站正在开发中，敬请期待！&#128512</footer>
 </body>
 </html>
